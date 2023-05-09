@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/style.css">
+<script src="/static/boggle.js"></script>
+</head>
+<body>
+{% for ele in board %}
+    <div>{{ele}}</div>
+{%endfor%}
+ 
+
+
+<form action="/game">
+    <label>GUESS</label>
+    <input type ="text" placeholder="word" name="guess">
+    <button>SUBMIT</button>
+</form>
+</body>
+
+
+<ul>  
+
+</ul>    
+
+{{check}}
+{{result}}
+{{total}}
+
+
+</html>
+
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/static/boggle.js"></script>
