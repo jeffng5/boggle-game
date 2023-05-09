@@ -1,14 +1,14 @@
 div {
     font-size: 80px; 
-    color: bisque;
+    color: black;
     border : 1px solid black;
-    background: forestgreen;
+    border-right: 1px solid black;
 }
 
 
 body {
-font-size: 45px;
-color: green;
+font-size: 20px;
+color: black;
 
 
 }

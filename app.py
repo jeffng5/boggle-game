@@ -14,21 +14,23 @@ board= boggle_game.make_board()
 
 @app.route('/')
 def make_board():
-    
+    session['running_total'] =0
+    board=boggle_game.make_board()
     return render_template('board.html', board=board)
 
 @app.route('/game')
 def play():
     session['board']
-    score = 0
+    
     entry = request.args.get('guess')
     
     words=entry
     result = boggle_game.check_valid_word(board, words)
-    total=[]
+    running_total=0
+    score=0
     if result == 'ok':
         score += len(entry)
-        total.append(score)
-    summation = sum(total)
-    return render_template('board.html', board=board, check=words, result=result, total=summation) 
+        running_total += score 
+    session['running_total'] = session['running_total'] + running_total
+    return render_template('board.html', board=board, check=words, result=result) 
 

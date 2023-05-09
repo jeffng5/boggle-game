@@ -14,18 +14,25 @@
 <form action="/game">
     <label>GUESS</label>
     <input type ="text" placeholder="word" name="guess">
-    <button>SUBMIT</button>
+    <button id='enter'>SUBMIT</button>
 </form>
+<form action='/'>
+    <button id = 'reset'>Reset Game</button>
+
 </body>
+
 
 
 <ul>  
 
 </ul>    
 
-{{check}}
-{{result}}
-{{total}}
+<p>{{check}}
+{{result}}</p>
+
+Points:
+
+{{session['running_total']}}
 
 
 </html>
