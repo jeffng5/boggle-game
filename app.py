@@ -8,7 +8,7 @@ app.config['SECRET_KEY'] = 'nowayJose'
 app.config['DEBUG_TB_INTERCEPT_REDIRECTS']= False
 # debug= DebugToolbarExtension(app)
 boggle_game = Boggle()
-board= boggle_game.make_board()
+# board= boggle_game.make_board()
 
 # start game here
 @app.route('/')
@@ -17,12 +17,13 @@ def make_board():
     session['running_total'] =0
     #setup board
     board=boggle_game.make_board()
+    session['board']=board
     return render_template('board.html', board=board)
 
 @app.route('/game')
 def play():
     #keep board constant by storing in sessions
-    session['board']
+    board= session['board']
     #get the value of form entry
     entry = request.args.get('guess')
     words=entry
