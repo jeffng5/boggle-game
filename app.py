@@ -23,14 +23,20 @@ def play():
     session['board']
     
     entry = request.args.get('guess')
-    
+    used_list=[]
     words=entry
     result = boggle_game.check_valid_word(board, words)
     running_total=0
     score=0
+    
     if result == 'ok':
+    
         score += len(entry)
         running_total += score 
-    session['running_total'] = session['running_total'] + running_total
+        session['running_total'] = session['running_total'] + running_total
+    
+    
+    if session['running_total'] > session['high_score']:     
+        session['high_score'] = session['running_total']
     return render_template('board.html', board=board, check=words, result=result) 
 

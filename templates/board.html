@@ -16,6 +16,8 @@
     <input type ="text" placeholder="word" name="guess">
     <button id='enter'>SUBMIT</button>
 </form>
+
+
 <form action='/'>
     <button id = 'reset'>Reset Game</button>
 
@@ -30,9 +32,14 @@
 <p>{{check}}
 {{result}}</p>
 
+
 Points:
 
 {{session['running_total']}}
+
+HIGHEST SCORE:
+
+{{session['high_score']}}
 
 
 </html>
