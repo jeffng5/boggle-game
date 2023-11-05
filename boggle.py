@@ -33,12 +33,18 @@ class Boggle():
         """Check if a word is a valid word in the dictionary and/or the boggle board"""
 
         word_exists = word in self.words
-        valid_word = self.find(board, word.upper())
-
+        valid_word = self.find(board, str(word).upper())
+    
         if word_exists and valid_word:
             result = "ok"
+            
         elif word_exists and not valid_word:
             result = "not-on-board"
+        # for word in word_exists:
+        #     for i in len(word_list):
+        #         if word and word_list[i]:
+        #             result = "on-board-already"
+
         else:
             result = "not-word"
         print(result)
