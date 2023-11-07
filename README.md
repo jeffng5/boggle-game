@@ -1,1 +1,2 @@
 # boggle-game
+This is a recreation of the classic word finding game Boggle. App.py is the main file while boogle.py contains the class to make, shuffle and keep score of the board. Words.txt is the "dictionary where you reference if the word is valid or not. This was a school assignment and so only boggle.py and words.txt are not originally my files. This boggle app keeps track of your running score on a game and stores the highest score per playing session. Please enjoy!
